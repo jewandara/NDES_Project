@@ -1,0 +1,8 @@
+C:\Users\ZIONX\Documents\Visual Studio 2010\Projects\NDES\NDES\bin\NDES.dll
+C:\Users\ZIONX\Documents\Visual Studio 2010\Projects\NDES\NDES\bin\NDES.pdb
+C:\Users\ZIONX\Documents\Visual Studio 2010\Projects\NDES\NDES\obj\Debug\NDES.dll
+C:\Users\ZIONX\Documents\Visual Studio 2010\Projects\NDES\NDES\obj\Debug\NDES.pdb
+H:\NDES\NDES\bin\NDES.dll
+H:\NDES\NDES\bin\NDES.pdb
+H:\NDES\NDES\obj\Debug\NDES.dll
+H:\NDES\NDES\obj\Debug\NDES.pdb

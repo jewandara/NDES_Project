@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Account.master.cs" Inherits="NDES.Account.Account" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+  			<!-- Header -->
+				<header id="header">
+					<h1 id="logo">NDES <span>( ELECTRICAL ) - </span> J.R.M.JEEWANDARA</h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html"> EE/12/9063</a></li>
+							<li class="submenu">
+								<a href="#">HELP</a>
+								<ul>
+									<li><a href="left-sidebar.html">SETTINGS</a></li>
+									<li><a href="right-sidebar.html">CONTACT</a></li>
+									<li><a href="no-sidebar.html">ABOUT</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="button special">LOGOUT</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+
+            <!-- MAXFORD ACCOUNT SIDE MENU -->
+            <div class="max_side_boder" style="overflow: hidden;" id="MaxScrollID" runat="server">
+	            <ul>
+                    <li><div class="max_side_menu_bar"><a href="#" style="border:0px">DASHBOARD</a></div></li>
+                    <li><div class="max_side_menu_bar"><a href="#" style="border:0px">DASHBOARD</a></div></li>
+                    <li><div class="max_side_menu_bar"><a href="#" style="border:0px">DASHBOARD</a></div></li>
+                    <li><div class="max_side_menu_bar"><a href="#" style="border:0px">DASHBOARD</a></div></li>
+                    <li><div class="max_side_menu_bar"><a href="#" style="border:0px">DASHBOARD</a></div></li>
+                    <li><div class="max_side_menu_bar"><a href="#" style="border:0px">DASHBOARD</a></div></li>
+                </ul>
+                <hr /><br />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                        <div style=" width:1200px; display:block; overflow:hidden;" >
+                                <td  style=" width:450px; display:block; overflow:hidden; background:#456;">
+                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet                                        yiyuiyui
+
+                                        <br />rtuyretuyet
+                                </td>
+                                <td  style=" position:absolute; width:850px; display:block; overflow:hidden">
+                  
+						<p>Use the form below to give /dev/nuv fghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhd dgh gh dgh gd dh dsgh dgghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh dgh gds dhhjdfgjhfghfghhsfthjwjthsdfgjsfjhsjgsfjf dghd nmdgh dgh dgh dghjjsjsfghjfsgjhdf dghmdgh dgh ll a piece of your mind.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		                            <footer id="footer">
+			                            <ul class="icons">
+				                            <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+				                            <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+				                            <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+				                            <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+				                            <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+			                            </ul>
+                                        <div class="maxAccountFooter">
+                                            <a href="#" style=" font-size:10px; color:#000">Report Copyright Infringement</a><br />
+                                            <a href="#" style=" font-size:10px; color:#000">Report Security Issue</a><br />
+                                            <a href="#" style=" font-size:10px; color:#000">Privacy Statement</a><br />
+                                            <a href="#" style=" font-size:10px; color:#000">Trademark Notice</a><br />
+                                            <a href="#" style=" font-size:10px; color:#000">Accessibility</a><br />
+                                            <a href="#" style=" font-size:10px; color:#000">Sitemap</a><br />
+                                        </div>
+		                            </footer>
+                                </td>
+                                <td><hr /></td> 
+                            </tr>
+                        </table>
+
+
+
+
+
+
+
+
+
+		    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+    </div>
+    </form>
+</body>
+</html>

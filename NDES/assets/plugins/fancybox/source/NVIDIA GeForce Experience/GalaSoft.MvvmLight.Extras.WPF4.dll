@@ -1,0 +1,281 @@
+
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence..</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request could not be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.Append(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions)">
+      <summary>Writes a log record to the <see cref="T:System.IO.Log.FileRecordSequence" />. This method cannot be inherited.</summary>
+      <returns>The sequence number of the appended log record. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request could not be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.Append(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection)">
+      <summary>Writes a log record to the <see cref="T:System.IO.Log.FileRecordSequence" />, using space previously reserved in the sequence. This method cannot be inherited.</summary>
+      <returns>The sequence number of the appended log record. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written. </param>
+      <param name="reservations">A <see cref="T:System.IO.Log.ReservationCollection" /> that contains the reservation that should be used for this record. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence..</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request could not be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+    </member>
+    <member name="P:System.IO.Log.FileRecordSequence.BaseSequenceNumber">
+      <summary>Gets the sequence number of the first valid record in the current <see cref="T:System.IO.Log.FileRecordSequence" />. </summary>
+      <returns>The lowest sequence number that corresponds to a valid record in the <see cref="T:System.IO.Log.FileRecordSequence" />. </returns>
+      <exception cref="T:System.ObjectDisposedException">The property was accessed after the sequence has been disposed of. </exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous append operation. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous append, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record.</param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written.</param>
+      <param name="callback">An optional asynchronous callback, to be called when the append is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous append request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous append operation using space previously reserved in the sequence. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous append, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record.</param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written.</param>
+      <param name="reservations">A <see cref="T:System.IO.Log.ReservationCollection" /> that contains the reservation that should be used for this record. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the append is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous append request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous append operation. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous append, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written.</param>
+      <param name="callback">An optional asynchronous callback, to be called when the append is complete.</param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous append request from other requests.</param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous append operation using space previously reserved in the sequence. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous append, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record.</param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written.</param>
+      <param name="reservations">A <see cref="T:System.IO.Log.ReservationCollection" /> that contains the reservation that should be used for this record. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the append is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous append request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginFlush(System.IO.Log.SequenceNumber,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous flush operation, using space previously reserved in the sequence. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous flush operation, which could still be pending. </returns>
+      <param name="sequenceNumber">The sequence number of the latest record that must be written. If <see cref="T:System.IO.Log.SequenceNumber" /> is invalid, then all records must be written. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the flush is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous flush request from other requests. </param>
+      <exception cref="T:System.ArgumentException">One or more of the arguments is invalid.<paramref name="sequenceNumber" /> is not valid for this sequence. </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="sequenceNumber" /> is not between the base and last sequence numbers of this sequence.</exception>
+      <exception cref="T:System.IO.IOException">An I/O error occurred while flushing the data. </exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginReserveAndAppend(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.Int64[],System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous reserve and append operation. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents this asynchronous operation, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written.</param>
+      <param name="reservationCollection">The reservation collection to make reservations in. </param>
+      <param name="reservations">The reservations to make, in bytes. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the append is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous append request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request could not be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginReserveAndAppend(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.SequenceNumber,System.IO.Log.RecordAppendOptions,System.IO.Log.ReservationCollection,System.Int64[],System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous reserve and append operation. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents this asynchronous operation, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="nextUndoRecord">The sequence number of the next record in the user-specified order. </param>
+      <param name="previousRecord">The sequence number of the next record in Previous order. </param>
+      <param name="recordAppendOptions">A valid value of <see cref="T:System.IO.Log.RecordAppendOptions" /> that specifies how the data should be written.</param>
+      <param name="reservationCollection">The reservation collection to make reservations in. </param>
+      <param name="reservations">The reservations to make, in bytes. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the append is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous append request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">One or more of the arguments are out of range.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request could not be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginWriteRestartArea(System.ArraySegment{System.Byte},System.IO.Log.SequenceNumber,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous restart area write operation, using space previously reserved in the sequence. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous restart area write operation, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="newBaseSeqNum">The new base sequence number. The specified sequence number must be greater than or equal to the current base sequence number. </param>
+      <param name="reservation">A <see cref="T:System.IO.Log.ReservationCollection" /> that contains the reservation that should be used for this restart area. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the restart area write is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous restart area write request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="newBaseSeqNum" /> is not between the base and last sequence numbers of this sequence.-or-A new or existing archive tail or base of the active log is invalid.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence.-or-<paramref name="newBaseSeqNum" /> is not valid for this sequence.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.BeginWriteRestartArea(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.IO.Log.SequenceNumber,System.IO.Log.ReservationCollection,System.AsyncCallback,System.Object)">
+      <summary>Begins an asynchronous restart area write operation, using space previously reserved in the sequence. This method cannot be inherited.</summary>
+      <returns>An <see cref="T:System.IAsyncResult" /> that represents the asynchronous restart area write operation, which could still be pending. </returns>
+      <param name="data">A list of byte array segments that will be concatenated and appended as the record. </param>
+      <param name="newBaseSeqNum">The new base sequence number. The specified sequence number must be greater than or equal to the current base sequence number. </param>
+      <param name="reservation">A <see cref="T:System.IO.Log.ReservationCollection" /> that contains the reservation that should be used for this restart area. </param>
+      <param name="callback">An optional asynchronous callback, to be called when the restart area write is complete. </param>
+      <param name="state">A user-provided object that distinguishes this particular asynchronous restart area write request from other requests. </param>
+      <exception cref="T:System.ArgumentNullException">One or more of the arguments are null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="newBaseSeqNum" /> is not between the base and last sequence numbers of this sequence.-or-A new or existing archive tail or base of the active log is invalid.</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="reservations" /> was not created by this record sequence.-or-<paramref name="newBaseSeqNum" /> is not valid for this sequence.</exception>
+      <exception cref="T:System.NotSupportedException">The operation cannot be performed because the record sequence was opened with read-only access.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <exception cref="T:System.IO.Log.SequenceFullException">The record sequence is full.</exception>
+      <exception cref="T:System.IO.Log.ReservationNotFoundException">No reservation large enough to fit <paramref name="data" /> can be found in <paramref name="reservations" />.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.CreateReservationCollection">
+      <summary>Creates a new <see cref="T:System.IO.Log.ReservationCollection" />. This method cannot be inherited.</summary>
+      <returns>The newly created <see cref="T:System.IO.Log.ReservationCollection" />. </returns>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.Dispose">
+      <summary>Immediately releases the unmanaged resources used by an object.</summary>
+      <exception cref="T:System.IO.IOException">An I/O error occurred while flushing the data. </exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.EndAppend(System.IAsyncResult)">
+      <summary>Ends an asynchronous append operation. This method cannot be inherited.</summary>
+      <returns>The sequence number of the appended log record. </returns>
+      <param name="result">A reference to the outstanding asynchronous I/O request.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="result" /> is invalid.</exception>
+      <exception cref="T:System.InvalidOperationException">End has already been called for this asynchronous operation.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.EndFlush(System.IAsyncResult)">
+      <summary>Ends an asynchronous flush operation. This method cannot be inherited.</summary>
+      <returns>The sequence number of the last record written. </returns>
+      <param name="result">A reference to the outstanding asynchronous I/O request.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="result" /> is invalid.</exception>
+      <exception cref="T:System.InvalidOperationException">End has already been called for this asynchronous operation.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.EndReserveAndAppend(System.IAsyncResult)">
+      <summary>Ends an asynchronous reserve and append operation. This method cannot be inherited.</summary>
+      <returns>The sequence number of the appended log record. </returns>
+      <param name="result">A reference to the outstanding asynchronous I/O request.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="result" /> is invalid.</exception>
+      <exception cref="T:System.InvalidOperationException">End has already been called for this asynchronous operation.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.ObjectDisposedException">The method was called after the sequence has been disposed of. </exception>
+      <exception cref="T:System.OutOfMemoryException">There is not enough memory to continue the execution of the program.</exception>
+      <filterpriority>2</filterpriority>
+    </member>
+    <member name="M:System.IO.Log.FileRecordSequence.EndWriteRestartArea(System.IAsyncResult)">
+      <summary>Ends an asynchronous restart area write operation. This method cannot be inherited.</summary>
+      <returns>The sequence number of the written log record. </returns>
+      <param name="result">A reference to the outstanding asynchronous I/O request.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="result" /> is invalid.</exception>
+      <exception cref="T:System.InvalidOperationException">End has already been called for this asynchronous operation.</exception>
+      <exception cref="T:System.IO.IOException">The request cannot be performed because of an unexpected I/O exception.</exception>
+      <exception cref="T:System.
